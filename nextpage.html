@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ruih8gtaのだいぼうけん</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- 外部CSSを読み込み -->
+</head>
+<body>
+    <div id="header-container">
+        <header class="site-header">
+            <h1>ruih8gtaのだいぼうけん</h1>
+            <nav>
+                <a href="index.html">ホーム</a>
+                <a href="nextpage.html">次のページ</a>
+            </nav>
+        </header>        
+    </div> <!-- ヘッダーを挿入するコンテナ -->
+    <div class="game-area">
+        <div class="character grid-position" id="character" data-grid-x="1" data-grid-y="3"></div> <!-- 初期位置を設定 -->
+        <div class="dragon grid-position" id="dragon" data-grid-x="3" data-grid-y="1"></div> <!-- ドラゴンを追加 -->
+    </div>
+    <div style="display: flex; justify-content: center; gap: 10px;"> <!-- フレックスボックスで配置 -->
+        <div class="command-area">
+            <p>コマンドを選択してください:</p>
+            <ul>
+                <li><a href="#" data-command="1">1. 自己紹介</a></li>
+                <li><a href="#" data-command="2">2. SNS</a></li>
+                <li><a href="#" data-command="3">3. 出版物</a></li>
+                <li><a href="#" data-command="4">4. ポートフォリオ</a></li>
+            </ul>
+        </div>
+        <div id="content-area" class="content-area">
+            <!-- コンテンツがここに表示されます -->
+        </div>
+    </div>
+    <script src="script.js"></script> <!-- 外部JavaScriptを読み込み -->
+</body>
+</html>

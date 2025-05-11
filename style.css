@@ -1,0 +1,154 @@
+body {
+    font-family: 'Press Start 2P', cursive; /* レトロなフォントを設定 */
+    background-color: #000; /* 背景色を黒に設定 */
+    color: #fff; /* テキストカラーを白に設定 */
+    margin: 0; /* ページ全体の余白をなくす */
+    padding: 0; /* ページ全体のパディングをなくす */
+    overflow: hidden; /* スクロールバーを非表示にする */
+    font-size: 16px; /* ドラクエ風の文字サイズを設定 */
+    letter-spacing: 2px; /* 文字間隔を広げてドラクエ風に */
+    line-height: 1.5; /* 行間を調整 */
+}
+
+h1 {
+    color: #FFD700; /* ゴールドカラーを設定 */
+    text-shadow: 2px 2px 0 #000; /* テキストに黒い影を追加 */
+    text-align: center; /* テキストを中央揃えにする */
+    margin-top: 10px; /* 上部に余白を追加 */
+    font-size: 24px; /* 見出しの文字サイズを調整 */
+    letter-spacing: 3px; /* 見出しの文字間隔を広げる */
+    font-family: 'Press Start 2P', cursive; /* レトロなフォントを適用 */
+}
+
+.game-area {
+    position: relative; /* 子要素の位置を基準にする */
+    width: 400px; /* ゲームエリアの幅を設定 */
+    height: 300px; /* ゲームエリアの高さを設定 */
+    background-color: #222; /* 背景色を濃いグレーに設定 */
+    background-image: url('asset/renga.png'); /* 背景画像を設定 */
+    background-size: 50px 50px; /* グリッドサイズに合わせて背景画像を調整 */
+    background-repeat: repeat; /* 画像を繰り返して敷き詰める */
+    border: 2px solid #fff; /* 白い枠線を追加 */
+    margin: 20px auto; /* 上下に余白を追加し、中央揃えにする */
+    overflow: hidden; /* 子要素がはみ出さないようにする */
+}
+
+.grid-position {
+    position: absolute; /* 親要素を基準に絶対位置を設定 */
+    width: 50px; /* グリッドサイズに合わせる */
+    height: 50px; /* グリッドサイズに合わせる */
+    background-size: cover; /* 背景画像を要素全体に拡大縮小して表示 */
+}
+
+[data-grid-x][data-grid-y] {
+    left: calc(var(--grid-x) * 50px); /* X座標をグリッド単位で計算 */
+    top: calc(var(--grid-y) * 50px); /* Y座標をグリッド単位で計算 */
+}
+
+.character {
+    position: absolute; /* 親要素を基準に絶対位置を設定 */
+    width: 64px; /* キャラクターの幅を設定 */
+    height: 64px; /* キャラクターの高さを設定 */
+    background-image: url('asset/yusha.png'); /* キャラクター画像を指定 */
+    background-size: cover; /* 画像を要素全体に拡大縮小して表示 */
+    top: 50%; /* 親要素の高さの50%の位置に配置 */
+    left: 50%; /* 親要素の幅の50%の位置に配置 */
+    transform: translate(-50%, -50%); /* 中心に配置するために位置を調整 */
+}
+
+.dragon {
+    position: absolute; /* 親要素を基準に絶対位置を設定 */
+    width: 128px; /* ドラゴンの幅を設定 */
+    height: 64px; /* ドラゴンの高さを設定 */
+    background-image: url('asset/dragon.png'); /* ドラゴン画像を指定 */
+    background-size: cover; /* 画像を要素全体に拡大縮小して表示 */
+    top: 50%; /* 親要素の高さの50%の位置に配置 */
+    left: 50%; /* 親要素の幅の50%の位置に配置 */
+    transform: translate(-50%, -50%); /* 中心に配置するために位置を調整 */
+}
+
+.command-area {
+    width: 400px; /* ゲームエリアと同じ幅 */
+    margin: 20px auto; /* 中央揃え */
+    padding: 10px;
+    background-color: #111; /* 背景色を濃い黒に設定 */
+    border: 2px solid #fff; /* 白い枠線を追加 */
+    color: #fff; /* テキストカラーを白に設定 */
+    font-family: 'Press Start 2P', cursive; /* レトロなフォントを適用 */
+    font-size: 14px; /* フォントサイズを調整 */
+}
+
+.command-area p {
+    margin: 0 0 10px 0; /* 下部に余白を追加 */
+}
+
+.command-area ul {
+    list-style: none; /* リストのマーカーを削除 */
+    padding: 0; /* パディングを削除 */
+    margin: 0 0 10px 0; /* 下部に余白を追加 */
+}
+
+.command-area li {
+    margin-bottom: 5px; /* 各リスト項目の間に余白を追加 */
+}
+
+.command-area a {
+    color: #FFD700; /* ゴールドカラーを設定 */
+    text-decoration: none; /* 下線を削除 */
+    font-family: 'Press Start 2P', cursive; /* レトロなフォントを適用 */
+    font-size: 14px; /* フォントサイズを調整 */
+    cursor: pointer; /* カーソルをポインターに変更 */
+}
+
+.command-area a:hover {
+    text-decoration: underline; /* ホバー時に下線を表示 */
+}
+
+.content-area {
+    width: 400px; /* ゲームエリアと同じ幅 */
+    margin: 20px auto; /* 中央揃え */
+    padding: 10px;
+    background-color: #111; /* command-areaと同じ背景色 */
+    border: 2px solid #fff; /* command-areaと同じ枠線 */
+    color: #fff; /* command-areaと同じテキストカラー */
+    font-family: 'Press Start 2P', cursive; /* command-areaと同じフォント */
+    font-size: 14px; /* command-areaと同じフォントサイズ */
+}
+
+#command-input {
+    width: calc(100% - 80px); /* ボタンを考慮した幅 */
+    padding: 5px;
+    font-family: 'Press Start 2P', cursive; /* レトロなフォントを適用 */
+    font-size: 14px; /* フォントサイズを調整 */
+    margin-right: 10px; /* ボタンとの間に余白を追加 */
+}
+
+#execute-command {
+    padding: 5px 10px;
+    font-family: 'Press Start 2P', cursive; /* レトロなフォントを適用 */
+    font-size: 14px; /* フォントサイズを調整 */
+    cursor: pointer; /* カーソルをポインターに変更 */
+}
+
+.site-header {
+    background-color: #111;
+    color: #FFD700;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.site-header h1 {
+    margin: 0 0 15px 0;
+}
+
+.site-header nav a {
+    color: #FFD700;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.site-header nav a:hover {
+    text-decoration: underline;
+}
