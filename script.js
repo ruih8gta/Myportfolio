@@ -118,3 +118,32 @@ commandLinks.forEach(link => {
         contentArea.style.display = 'block'; // コンテンツエリアを表示
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const character = document.getElementById("character");
+
+    function moveCharacter(dx, dy) {
+        let x = parseInt(character.dataset.gridX, 10);
+        let y = parseInt(character.dataset.gridY, 10);
+        x += dx;
+        y += dy;
+        // 範囲チェック（必要に応じて調整）
+        x = Math.max(0, Math.min(6, x));
+        y = Math.max(0, Math.min(6, y));
+        character.dataset.gridX = x;
+        character.dataset.gridY = y;
+        character.style.gridColumn = x + 1;
+        character.style.gridRow = y + 1;
+    }
+
+    document.getElementById("up-btn").onclick = () => moveCharacter(0, -1);
+    document.getElementById("down-btn").onclick = () => moveCharacter(0, 1);
+    document.getElementById("left-btn").onclick = () => moveCharacter(-1, 0);
+    document.getElementById("right-btn").onclick = () => moveCharacter(1, 0);
+    document.getElementById("a-btn").onclick = () => {
+        alert("Aボタンが押されました！");
+    };
+
+    // 初期位置反映
+    moveCharacter(0, 0);
+});
