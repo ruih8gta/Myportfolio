@@ -8,14 +8,7 @@
     <link rel="stylesheet" href="style.css"> <!-- 外部CSSを読み込み -->
 </head>
 <body>
-    <div id="header-container">
-        <header class="site-header">
-            <h1>ruih8gtaのだいぼうけん</h1>
-            <nav>
-                <a href="index.html">ホーム</a>
-                <a href="nextpage.html">次のページ</a>
-            </nav>
-        </header>        
+    <div id="header-container"> 
     </div> <!-- ヘッダーを挿入するコンテナ -->
     <div class="game-area">
         <div class="character grid-position" id="character" data-grid-x="1" data-grid-y="3"></div> <!-- 初期位置を設定 -->
@@ -35,6 +28,11 @@
             <!-- コンテンツがここに表示されます -->
         </div>
     </div>
+    <script>
+        fetch("header.html") // ヘッダーのHTMLを取得
+        .then((response) => response.text())
+        .then((data) => document.querySelector("#header-container").innerHTML = data);
+    </script> <!-- ヘッダーを読み込むJavaScript -->
     <script src="script.js"></script> <!-- 外部JavaScriptを読み込み -->
 </body>
 </html>

@@ -1,26 +1,178 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
-
-  <head>
-    <meta charset="utf-8">
-    <title>トップページ</title>
-  </head>
-
-  <body>
-    <div id="header"></div>
-
-    <main>
-      <p>内容</p>
-    </main>
-
-    <div id="footer"></div>
-    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ruih8gtaのだいぼうけん</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- 外部CSSを読み込み -->
+    <style>
+        /* Canvas specific styles */
+        #gameCanvas {
+            display: block;
+            margin: 20px auto;
+            background-color: #222;
+            border: 2px solid #fff;
+        }
+        /* ...existing css code... */
+    </style>
+</head>
+<body>
+    <div id="header-container"> 
+    </div> <!-- ヘッダーを挿入するコンテナ -->
+    <canvas id="gameCanvas" width="400" height="300"></canvas>
+        <div class="command-area2">
+            <p>コマンドを選択してください:</p>
+            <ul>
+                <li><a href="#" data-command="1">1. 自己紹介</a></li>
+                <li><a href="#" data-command="2">2. SNS</a></li>
+                <li><a href="#" data-command="3">3. 出版物</a></li>
+                <li><a href="#" data-command="4">4. ポートフォリオ</a></li>
+            </ul>
+        </div>
+        <div id="content-area2" class="content-area2">
+          aa
+            <!-- コンテンツがここに表示されます -->
+        </div>
     <script>
-      fetch("header.html")
+        fetch("header.html") // ヘッダーのHTMLを取得
         .then((response) => response.text())
-        .then((data) => document.querySelector("#header").innerHTML = data);
-    </script>
+        .then((data) => document.querySelector("#header-container").innerHTML = data);
 
-  </body>
+        // Canvas game logic
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const gridSize = 50;
 
+        // Game state
+        let playerX = 1;
+        let playerY = 3;
+        let dragonX = 3;
+        let dragonY = 1;
+        const dragonSize = 2; // ドラゴンは2グリッド分の大きさ
+
+        // Function to move dragon randomly
+        function moveDragon() {
+            let newX = dragonX;
+            let newY = dragonY;
+            const maxX = Math.floor(canvas.width / gridSize) - dragonSize;
+            const maxY = Math.floor(canvas.height / gridSize) - 1;
+
+            // ランダムに方向を選択 (0: 上, 1: 下, 2: 左, 3: 右)
+            const direction = Math.floor(Math.random() * 4);
+            
+            switch(direction) {
+                case 0: if (newY > 0) newY--; break; // 上
+                case 1: if (newY < maxY) newY++; break; // 下
+                case 2: if (newX > 0) newX--; break; // 左
+                case 3: if (newX < maxX) newX++; break; // 右
+            }
+
+            // プレイヤーとの衝突がない場合のみ移動
+            if (!(newX <= playerX && playerX < newX + dragonSize && newY === playerY)) {
+                dragonX = newX;
+                dragonY = newY;
+                render();
+            }
+        }
+
+        // Start dragon movement
+        setInterval(moveDragon, 2000);
+
+        // Load images
+        const playerImage = new Image();
+        playerImage.src = 'asset/yusha.png';
+        const dragonImage = new Image();
+        dragonImage.src = 'asset/dragon.png';
+        const backgroundImage = new Image();
+        backgroundImage.src = 'asset/renga.png';
+
+        function render() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw background
+            for(let y = 0; y < canvas.height; y += gridSize) {
+                for(let x = 0; x < canvas.width; x += gridSize) {
+                    ctx.drawImage(backgroundImage, x, y, gridSize, gridSize);
+                }
+            }
+
+            // Draw dragon with double width
+            ctx.drawImage(dragonImage, dragonX * gridSize, dragonY * gridSize, gridSize * dragonSize, gridSize);
+            // Draw player
+            ctx.drawImage(playerImage, playerX * gridSize, playerY * gridSize, gridSize, gridSize);
+        }
+
+        // Handle keyboard input
+        document.addEventListener('keydown', (event) => {
+            let newX = playerX;
+            let newY = playerY;
+
+            switch (event.key) {
+                case 'ArrowUp': if (playerY > 0) newY--; break;
+                case 'ArrowDown': if (playerY < 5) newY++; break;
+                case 'ArrowLeft': if (playerX > 0) newX--; break;
+                case 'ArrowRight': 
+                    if (playerX < 7) {
+                        newX++;
+                    } else {
+                        window.location.href = 'nextpage.html';
+                        return;
+                    }
+                    break;
+            }
+
+            // Check collision with dragon (considering dragon size)
+            if (!(newX >= dragonX && newX < dragonX + dragonSize && newY === dragonY)) {
+                playerX = newX;
+                playerY = newY;
+                render();
+            }
+        });
+
+        // Initial render
+        Promise.all([
+            new Promise(resolve => playerImage.onload = resolve),
+            new Promise(resolve => dragonImage.onload = resolve),
+            new Promise(resolve => backgroundImage.onload = resolve)
+        ]).then(() => {
+            render();
+        });
+        document.addEventListener("DOMContentLoaded", () => {
+    // コンテンツエリアの要素を取得
+    const contentArea = document.getElementById('content-area2');
+    // コマンドリンクの要素を取得
+    const commandLinks = document.querySelectorAll('.command-area2 a');
+
+    commandLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const command = event.target.dataset.command;
+            let content = '';
+
+            switch (command) {
+                case '1':
+                    content = '職業：データサイエンティスト<br>スキル：Python<br>必殺技：合気道';
+                    break;
+                case '2':
+                    content = 'SNS: <a href="https://twitter.com" target="_blank">Twitter</a>, <a href="https://instagram.com" target="_blank">Instagram</a>, <a href="https://linkedin.com" target="_blank">LinkedIn</a>';
+                    break;
+                case '3':
+                    content = '出版物: 書籍タイトル1, 書籍タイトル2';
+                    break;
+                case '4':
+                    content = 'ポートフォリオ: プロジェクト1, プロジェクト2';
+                    break;
+                default:
+                    content = '指示を待っている。';
+            }
+
+            contentArea.innerHTML = content;
+            contentArea.style.display = 'block';
+        });
+    });
+});
+    </script> <!-- ヘッダーを読み込むJavaScript -->
+    <script src="script.js"></script> <!-- 外部JavaScriptを読み込み -->
+</body>
 </html>

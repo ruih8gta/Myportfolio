@@ -147,3 +147,38 @@ document.addEventListener("DOMContentLoaded", () => {
     // 初期位置反映
     moveCharacter(0, 0);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    // コンテンツエリアの要素を取得
+    const contentArea = document.getElementById('content-area2');
+    // コマンドリンクの要素を取得
+    const commandLinks = document.querySelectorAll('.command-area a');
+
+    commandLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const command = event.target.dataset.command;
+            let content = '';
+
+            switch (command) {
+                case '1':
+                    content = '職業：データサイエンティスト<br>スキル：Python<br>必殺技：合気道';
+                    break;
+                case '2':
+                    content = 'SNS: <a href="https://twitter.com" target="_blank">Twitter</a>, <a href="https://instagram.com" target="_blank">Instagram</a>, <a href="https://linkedin.com" target="_blank">LinkedIn</a>';
+                    break;
+                case '3':
+                    content = '出版物: 書籍タイトル1, 書籍タイトル2';
+                    break;
+                case '4':
+                    content = 'ポートフォリオ: プロジェクト1, プロジェクト2';
+                    break;
+                default:
+                    content = '指示を待っている。';
+            }
+
+            contentArea.innerHTML = content;
+            contentArea.style.display = 'block';
+        });
+    });
+});
