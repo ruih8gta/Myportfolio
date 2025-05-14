@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ruih8gtaのだいぼうけん</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"> <!-- 外部CSSを読み込み -->
+    <link rel="stylesheet" href="test_style.css"> <!-- 外部CSSを読み込み -->
     <style>
         /* Canvas specific styles */
         #gameCanvas {
@@ -21,7 +21,8 @@
     <div id="header-container"> 
     </div> <!-- ヘッダーを挿入するコンテナ -->
     <canvas id="gameCanvas" width="400" height="300"></canvas>
-        <div class="command-area2">
+    <div style="display: flex; justify-content: center; gap: 10px;"> <!-- フレックスボックスで配置 -->
+        <div class="command-area">
             <p>コマンドを選択してください:</p>
             <ul>
                 <li><a href="#" data-command="1">1. 自己紹介</a></li>
@@ -30,10 +31,10 @@
                 <li><a href="#" data-command="4">4. ポートフォリオ</a></li>
             </ul>
         </div>
-        <div id="content-area2" class="content-area2">
-          aa
+        <div id="content-area" class="content-area">
             <!-- コンテンツがここに表示されます -->
         </div>
+    </div>
     <script>
         //fetch("header.html") // ヘッダーのHTMLを取得
         //.then((response) => response.text())
@@ -140,9 +141,9 @@
         });
         document.addEventListener("DOMContentLoaded", () => {
     // コンテンツエリアの要素を取得
-    const contentArea = document.getElementById('content-area2');
+    const contentArea = document.getElementById('content-area');
     // コマンドリンクの要素を取得
-    const commandLinks = document.querySelectorAll('.command-area2 a');
+    const commandLinks = document.querySelectorAll('.command-area a');
 
     commandLinks.forEach(link => {
         link.addEventListener('click', (event) => {
