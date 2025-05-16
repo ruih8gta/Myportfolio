@@ -6,14 +6,21 @@
     <title>ruih8gtaのだいぼうけん</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css"> <!-- 外部CSSを読み込み -->
+    <style>
+    /* Canvas specific styles */
+    #gameCanvas {
+        display: block;
+        margin: 20px auto;
+        background-color: #222;
+        border: 2px solid #fff;
+    }
+    /* ...existing css code... */
+</style>
 </head>
 <body>
-    <div id="header-container"> 
+    <div id="header-container">
     </div> <!-- ヘッダーを挿入するコンテナ -->
-    <div class="game-area">
-        <div class="character grid-position" id="character" data-grid-x="1" data-grid-y="3"></div> <!-- 初期位置を設定 -->
-        <div class="dragon grid-position" id="dragon" data-grid-x="3" data-grid-y="1"></div> <!-- ドラゴンを追加 -->
-    </div>
+    <canvas id="gameCanvas" width="400" height="300"></canvas>
     <div style="display: flex; justify-content: center; gap: 10px;"> <!-- フレックスボックスで配置 -->
         <div class="command-area">
             <p>コマンドを選択してください:</p>
@@ -28,11 +35,9 @@
             <!-- コンテンツがここに表示されます -->
         </div>
     </div>
-    <script>
-        fetch("header.html") // ヘッダーのHTMLを取得
-        .then((response) => response.text())
-        .then((data) => document.querySelector("#header-container").innerHTML = data);
-    </script> <!-- ヘッダーを読み込むJavaScript -->
-    <script src="script.js"></script> <!-- 外部JavaScriptを読み込み -->
+    <script src="header.js"></script> <!-- 外部JavaScriptを読み込み -->
+    <script src="command.js"></script> <!-- 外部JavaScriptを読み込み -->
+    <script src="game.js"></script> <!-- 外部JavaScriptを読み込み -->
+
 </body>
 </html>

@@ -20,18 +20,6 @@ h1 {
     font-family: 'Press Start 2P', cursive; /* レトロなフォントを適用 */
 }
 
-.game-area {
-    position: relative; /* 子要素の位置を基準にする */
-    width: 400px; /* ゲームエリアの幅を設定 */
-    height: 300px; /* ゲームエリアの高さを設定 */
-    background-color: #222; /* 背景色を濃いグレーに設定 */
-    background-image: url('test_asset/renga.png'); /* 背景画像を設定 */
-    background-size: 50px 50px; /* グリッドサイズに合わせて背景画像を調整 */
-    background-repeat: repeat; /* 画像を繰り返して敷き詰める */
-    border: 2px solid #fff; /* 白い枠線を追加 */
-    margin: 20px auto; /* 上下に余白を追加し、中央揃えにする */
-    overflow: hidden; /* 子要素がはみ出さないようにする */
-}
 
 .grid-position {
     position: absolute; /* 親要素を基準に絶対位置を設定 */
@@ -43,28 +31,6 @@ h1 {
 [data-grid-x][data-grid-y] {
     left: calc(var(--grid-x) * 50px); /* X座標をグリッド単位で計算 */
     top: calc(var(--grid-y) * 50px); /* Y座標をグリッド単位で計算 */
-}
-
-.character {
-    position: absolute; /* 親要素を基準に絶対位置を設定 */
-    width: 64px; /* キャラクターの幅を設定 */
-    height: 64px; /* キャラクターの高さを設定 */
-    background-image: url('test_asset/yusha.png'); /* キャラクター画像を指定 */
-    background-size: cover; /* 画像を要素全体に拡大縮小して表示 */
-    top: 50%; /* 親要素の高さの50%の位置に配置 */
-    left: 50%; /* 親要素の幅の50%の位置に配置 */
-    transform: translate(-50%, -50%); /* 中心に配置するために位置を調整 */
-}
-
-.dragon {
-    position: absolute; /* 親要素を基準に絶対位置を設定 */
-    width: 128px; /* ドラゴンの幅を設定 */
-    height: 64px; /* ドラゴンの高さを設定 */
-    background-image: url('test_asset/dragon.png'); /* ドラゴン画像を指定 */
-    background-size: cover; /* 画像を要素全体に拡大縮小して表示 */
-    top: 50%; /* 親要素の高さの50%の位置に配置 */
-    left: 50%; /* 親要素の幅の50%の位置に配置 */
-    transform: translate(-50%, -50%); /* 中心に配置するために位置を調整 */
 }
 
 .command-area {
