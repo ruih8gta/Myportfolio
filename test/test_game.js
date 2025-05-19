@@ -89,6 +89,37 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
+// Add button controls
+document.getElementById('up').addEventListener('click', () => {
+    if (playerY > 0) {
+        playerY--;
+        render();
+    }
+});
+
+document.getElementById('down').addEventListener('click', () => {
+    if (playerY < 5) {
+        playerY++;
+        render();
+    }
+});
+
+document.getElementById('left').addEventListener('click', () => {
+    if (playerX > 0) {
+        playerX--;
+        render();
+    }
+});
+
+document.getElementById('right').addEventListener('click', () => {
+    if (playerX < 7) {
+        playerX++;
+        render();
+    } else {
+        window.location.href = 'nextpage.html';
+    }
+});
+
 // Initial render
 Promise.all([
     new Promise(resolve => playerImage.onload = resolve),
