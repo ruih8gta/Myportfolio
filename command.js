@@ -30,6 +30,10 @@ commandLinks.forEach(link => {
                 content = 'ポートフォリオ:'
                 + '<br><a href="">工事中。。。</a>';
                 break;
+            case '5': // 連絡先コマンド
+                content = 'スキル詳細:'
+                + '<br><a href="status.html" target="_blank">スキル詳細</a>';
+                break;
             default: // 無効なコマンド
                 content = '指示を待っている。';
         }

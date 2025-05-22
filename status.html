@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ruih8gtaのステータス</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="status.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="header-container"></div> <!-- ヘッダーを挿入するコンテナ -->
+    <div class="status-window">
+        <div class="status-header">
+            <h1>ステータス</h1>
+        </div>
+        <div class="status-content">
+            <div class="character-info">
+                <p>なまえ: ruih8gta</p>
+                <p>レベル: 30</p>
+                <p>職業: データサイエンティスト</p>
+                <p>経歴:<br>
+                    2019ねん～2024ねん<br>
+                    自働車メーカー 社内SE→<br>
+                    2024ねん～<br>
+                    総合電機メーカー データサイエンティスト
+                
+                </p>
+            </div>
+            <div class="stats">
+                <div class="stats-text">
+                    <p>HP: 120/120</p>
+                    <p>MP: 84/84</p>
+                    <p>ちから: 75</p>
+                    <p>みのまもり: 82</p>
+                    <p>すばやさ: 68</p>
+                    <p>かしこさ: 90</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="skillChart"></canvas>
+                </div>
+            </div>
+            <div class="skills">
+                <h2>スキルマップ</h2>
+                <div class="skill-tree">
+                    <div class="skill-branch">
+                        <div class="skill-node learned">JavaScript
+                            <div class="skill-children">
+                                <div class="skill-node learned">React</div>
+                                <div class="skill-node">Vue.js</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-branch">
+                        <div class="skill-node learned">Python
+                            <div class="skill-children">
+                                <div class="skill-node learned">データ分析</div>
+                                <div class="skill-node">機械学習</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-branch">
+                        <div class="skill-node learned">HTML/CSS
+                            <div class="skill-children">
+                                <div class="skill-node learned">レスポンシブ</div>
+                                <div class="skill-node">アニメーション</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="header.js"></script> <!-- 外部JavaScriptを読み込み -->
+    <script src="status.js"></script>
+</body>
+</html>

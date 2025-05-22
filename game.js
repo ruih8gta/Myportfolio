@@ -141,7 +141,6 @@ document.addEventListener('keydown', (event) => {
         case 'ArrowUp': if (playerY > 0) newY--; break; // 上移動
         case 'ArrowDown': if (playerY < 5) newY++; break; // 下移動
         case 'ArrowLeft': if (playerX > 0) newX--; break; // 左移動
-        
         case 'ArrowRight': 
             if (playerX < 7) {
                 newX++; // 右移動
@@ -170,7 +169,7 @@ document.addEventListener('keydown', (event) => {
             contentArea.innerHTML = message;
             contentArea.style.display = 'block';
             // コンソールにもログを出力
-            console.log(`${item.type}を手に入れた！`);
+            //console.log(`${item.type}を手に入れた！`);
         }
     });
 
