@@ -12,6 +12,7 @@ commandLinks.forEach(link => {
         switch (command) {
             case '1': // 自己紹介コマンド
                 content = '職業：データサイエンティスト'
+                + '<br>専門：生成AI・システム開発'
                 + '<br>得意な呪文：Python'
                 + '<br>必殺技：合気道'; // 表示する内容
                 break;

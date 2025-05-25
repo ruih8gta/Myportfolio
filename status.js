@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
     new Chart(ctx, {
         type: 'radar',
         data: {
-            labels: ['ちから', 'みのまもり', 'すばやさ', 'かしこさ', 'うん', 'MP'],
+            labels: ['たいりょく', 'こうきしん', 'えいごりょく', 'うん', 'しりょく'],
             datasets: [{
                 label: 'ステータス',
-                data: [75, 820, 68, 90, 65, 84],
+                data: [8, 9, 7, 5, 1],
                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
                 borderColor: 'rgb(54, 162, 235)',
                 pointBackgroundColor: 'rgb(54, 162, 235)',

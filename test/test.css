@@ -1,0 +1,20 @@
+.skill-editor {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.skill-editor h3 {
+    margin-top: 0;
+}
+
+.skill-editor select, 
+.skill-editor button {
+    margin: 5px;
+    padding: 5px;
+}
+
+.skill-editor label {
+    margin-left: 10px;
+}

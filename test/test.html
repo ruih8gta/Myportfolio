@@ -3,48 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ruih8gtaのだいぼうけん</title>
+    <title>ruih8gtaのステータス (テスト)</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="test_style.css"> <!-- 外部CSSを読み込み -->
-    <style>
-        /* Canvas specific styles */
-        #gameCanvas {
-            display: block;
-            margin: 20px auto;
-            background-color: #222;
-            border: 2px solid #fff;
-        }
-        /* ...existing css code... */
-    </style>
+    <link rel="stylesheet" href="../status.css">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div id="header-container"> 
-    </div> <!-- ヘッダーを挿入するコンテナ -->
-    <canvas id="gameCanvas" width="400" height="300"></canvas>
-    <div id="cursor">
-        <button id="up">↑</button>
-        <div>
-            <button id="left">←</button>
-            <button id="right">→</button>
+    <div id="header-container"></div>
+    <div class="status-window">
+        <div class="status-header">
+            <h1>ステータス (テスト)</h1>
         </div>
-        <button id="down">↓</button>
+        <div class="status-content">
+            <div class="character-info">
+                <p>なまえ: ruih8gta</p>
+                <p>レベル: 30</p>
+                <p>職業: データサイエンティスト</p>
+                <p>経歴:<br>
+                    2019ねん～2024ねん<br>
+                    自働車メーカー 社内SE→<br>
+                    2024ねん～<br>
+                    総合電機メーカー データサイエンティスト
+                </p>
+            </div>
+            <div class="stats">
+                <div class="stats-text">
+                    <p>HP: 120/120</p>
+                    <p>MP: 84/84</p>
+                    <p>ちから: 75</p>
+                    <p>みのまもり: 82</p>
+                    <p>すばやさ: 68</p>
+                    <p>かしこさ: 90</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="skillChart"></canvas>
+                </div>
+            </div>
+            <div class="skills">
+                <h2>スキルマップ</h2>
+                <div id="skill-tree" class="skill-tree">
+                    <!-- スキルツリーは動的に生成されます -->
+                </div>
+            </div>
+        </div>
     </div>
-    <div style="display: flex; justify-content: center; gap: 10px;"> <!-- フレックスボックスで配置 -->
-        <div class="command-area">
-            <p>コマンドを選択してください:</p>
-            <ul>
-                <li><a href="#" data-command="1">1. 自己紹介</a></li>
-                <li><a href="#" data-command="2">2. SNS</a></li>
-                <li><a href="#" data-command="3">3. 出版物</a></li>
-                <li><a href="#" data-command="4">4. ポートフォリオ</a></li>
-            </ul>
-        </div>
-        <div id="content-area" class="content-area">
-            <!-- コンテンツがここに表示されます -->
-        </div>
-    </div>
-    <script src="test.js"></script> <!-- 外部JavaScriptを読み込み -->
-    <script src="test2.js"></script> <!-- 外部JavaScriptを読み込み -->
-    <script src="test_game.js"></script>
+    <script src="../header.js"></script>
+    <script type="module" src="./test.js"></script>
 </body>
 </html>

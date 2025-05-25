@@ -28,12 +28,14 @@ body {
 .character-info {
     border: 2px solid #fff;
     padding: 15px;
+    overflow: hidden;
 }
 
 .stats {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    overflow: hidden;
 }
 
 .stats-text {
@@ -50,7 +52,9 @@ body {
 .skills {
     grid-column: 1 / -1;
     border: 2px solid #fff;
-    padding: 15px;
+    padding: 0px;
+    width: 100%;
+    overflow-x: auto;
 }
 
 p {
@@ -73,4 +77,55 @@ li:before {
     content: "→";
     position: absolute;
     left: 0;
+}
+
+/* スキルツリースタイル */
+.skill-tree {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /*gap: 20px;*/
+    max-width: 100%;
+}
+
+.skill-branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skill-node {
+    background: #000;
+    border: 2px solid #666;
+    padding: 10px 15px;
+    margin: 10px 0;
+    position: relative;
+    color: #666;
+}
+
+.skill-node.learned {
+    border-color: #fff;
+    color: #fff;
+}
+
+.skill-children {
+    margin-left: 15px;
+    /*display: flex;*/
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.skill-children::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 2px;
+    height: 20px;
+    background: #666;
+}
+
+.skill-node.learned + .skill-children::before {
+    background: #fff;
 }
