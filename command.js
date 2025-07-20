@@ -29,7 +29,7 @@ commandLinks.forEach(link => {
                 break;
             case '4': // ポートフォリオコマンド
                 content = 'ポートフォリオ:'
-                + '<br><a href="">工事中。。。</a>';
+                + '<br><a href="https://ruih8gta.github.io/yokai-book/src/">妖怪図鑑</a>';
                 break;
             case '5': // 連絡先コマンド
                 content = 'スキル詳細:'
