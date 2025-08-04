@@ -24,8 +24,8 @@ commandLinks.forEach(link => {
                 break;
             case '3': // 出版物コマンド
                 content = '出版物:'
-                + '<br><a href="https://www.jstage.jst.go.jp/article/pfr/13/0/13_3405117/_article" target="_blank">論文その１</a>'
-                + '<br><a href="https://www.sciencedirect.com/science/article/abs/pii/S0920379621001368" target="_blank">論文その２</a>';
+                + '<br><a href="https://www.jstage.jst.go.jp/article/pfr/13/0/13_3405117/_article" target="_blank">Estimation of Plasma Emission Transition Using Hidden Markov Model</a>'
+                + '<br><a href="https://www.sciencedirect.com/science/article/abs/pii/S0920379621001368" target="_blank">Prediction of unusual plasma discharge by using Support Vector Machine</a>';
                 break;
             case '4': // ポートフォリオコマンド
                 content = 'ポートフォリオ:'

@@ -71,13 +71,13 @@ setInterval(moveCar, 1000);
 
 // 画像のロード
 const playerImage = new Image();
-playerImage.src = 'asset/yusha.png'; // 勇者の画像
+playerImage.src = 'assets/yusha.png'; // 勇者の画像
 const dragonImage = new Image();
-dragonImage.src = 'asset/dragon.png'; // ドラゴンの画像
+dragonImage.src = 'assets/dragon.png'; // ドラゴンの画像
 const backgroundImage = new Image();
-backgroundImage.src = 'asset/renga.png'; // 背景の画像
+backgroundImage.src = 'assets/renga.png'; // 背景の画像
 const carImage = new Image();
-carImage.src = 'asset/car.png'; // の画像
+carImage.src = 'assets/car.png'; // の画像
 //const fireImage = new Image();
 //fireImage.src = 'asset/fire1.png'; // 炎
 const fireImages = [
@@ -85,14 +85,14 @@ const fireImages = [
     new Image(),
     new Image()
 ];
-fireImages[0].src = 'asset/fire1.png';
-fireImages[1].src = 'asset/fire2.png';
-fireImages[2].src = 'asset/bolt.png';
+fireImages[0].src = 'assets/fire1.png';
+fireImages[1].src = 'assets/fire2.png';
+fireImages[2].src = 'assets/bolt.png';
 let currentFireIndex = 0;  // 現在表示している炎の画像のインデックス
 
 
 const pcImage = new Image();
-pcImage.src = 'asset/pc.png'; // ポーションの画像
+pcImage.src = 'assets/pc.png'; // ポーションの画像
 
 // 炎のアニメーション処理
 setInterval(() => {

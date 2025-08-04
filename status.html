@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ruih8gtaのステータス</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="status.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/status.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -34,53 +34,54 @@
                     <p>MP: 84/84</p>
                     <p>たいりょく: 8</p>
                     <p>こうきしん: 9</p>
-                    <p>えいごりょく： 7</p>
+                    <p data-stat="english">えいごりょく： 7</p>
                     <p>うん: 5</p>
                     <p>しりょく: 1</p>
 
                 </div>
                 <div class="chart-container">
                     <canvas id="skillChart"></canvas>
+                    <button id="reset-chart-button" style="display: none;">もどる</button>
                 </div>
             </div>
             <div class="skills">
                 <h2>スキルマップ</h2>
                 <div class="skill-tree">
                     <div class="skill-branch">
-                        <div class="skill-node learned">プログラミング
+                        <div class="skill-node learned" data-skill="programming">プログラミング
                             <div class="skill-children">
-                                <div class="skill-node learned">Python</div>
-                                <div class="skill-node learned">HTML/CSS</div>
-                                <div class="skill-node learned">JavaScript</div>
+                                <div class="skill-node learned" data-skill="python">Python</div>
+                                <div class="skill-node learned" data-skill="html_css">HTML/CSS</div>
+                                <div class="skill-node learned" data-skill="javascript">JavaScript</div>
                             </div>
                         </div>
                     </div>
                     <div class="skill-branch">
-                        <div class="skill-node learned">Kaggle
+                        <div class="skill-node learned" data-skill="kaggle">Kaggle
                             <div class="skill-children">
-                                <div class="skill-node">Bronze:0</div>
-                                <div class="skill-node">Silver:0</div>
-                                <div class="skill-node">Gold:0</div>                                
+                                <div class="skill-node" data-skill="bronze">Bronze:0</div>
+                                <div class="skill-node" data-skill="silver">Silver:0</div>
+                                <div class="skill-node" data-skill="gold">Gold:0</div>                                
                             </div>
                         </div>
                     </div>
                     <div class="skill-branch">
-                        <div class="skill-node learned">IPA
+                        <div class="skill-node learned" data-skill="ipa">IPA
                             <div class="skill-children">
-                                <div class="skill-node learned">AP:2017</div>
-                                <div class="skill-node learned">DB:2024</div>
-                                <div class="skill-node">PM:xxxx</div>
+                                <div class="skill-node learned" data-skill="ap">AP:2017</div>
+                                <div class="skill-node learned" data-skill="db">DB:2024</div>
+                                <div class="skill-node" data-skill="pm">PM:xxxx</div>
                             </div>
                         </div>
                     </div>
                     
                     <div class="skill-branch">
-                        <div class="skill-node learned">民間資格
+                        <div class="skill-node learned" data-skill="certifications">民間資格
                             <div class="skill-children">
-                                <div class="skill-node learned">GitHub Foundations/Copilot:2025</div>
-                                <div class="skill-node learned">AI 900:2025</div>
-                                <div class="skill-node">GCP(ACE):xxxx</div>
-                                <div class="skill-node">GCP(PMLE):xxxx</div>
+                                <div class="skill-node learned" data-skill="github">GitHub Foundations/Copilot:2025</div>
+                                <div class="skill-node learned" data-skill="ai900">AI 900:2025</div>
+                                <div class="skill-node" data-skill="gcp_ace">GCP(ACE):xxxx</div>
+                                <div class="skill-node" data-skill="gcp_pmle">GCP(PMLE):xxxx</div>
 
                             </div>
                         </div>
@@ -90,7 +91,17 @@
             </div>
         </div>
     </div>
-    <script src="header.js"></script> <!-- 外部JavaScriptを読み込み -->
-    <script src="status.js"></script>
+
+    <!-- モーダルウィンドウ -->
+    <div id="skill-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modal-skill-title"></h2>
+            <p id="modal-skill-description"></p>
+        </div>
+    </div>
+
+    <script src="js/header.js"></script> <!-- 外部JavaScriptを読み込み -->
+    <script src="js/status.js"></script>
 </body>
 </html>
