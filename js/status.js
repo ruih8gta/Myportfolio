@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
     originalChartData = initialChartConfig;
 
     document.querySelector('[data-stat="english"]').addEventListener('click', () => {
-        fetch('/data/chart-data.json')
+        fetch('data/chart-data.json')
             .then(response => response.json())
             .then(data => {
                 const toeicConfig = {
