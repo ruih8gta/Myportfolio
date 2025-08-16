@@ -8,5 +8,23 @@
             "borderColor": "rgba(255, 99, 132, 1)",
             "borderWidth": 1
         }]
+    },
+    "kaggle_ranking": {
+        "labels": ["2024/12", "2025/3", "2025/3","2025/6","2025/7"],
+        "datasets": [{
+            "label": "Kaggle上位[%]",
+            "data": [51.4, 42.8, 21.5,23.0, 9.2],
+            "borderColor": "rgba(54, 162, 235, 1)",
+            "backgroundColor": "rgba(54, 162, 235, 0.2)",
+            "fill": false
+        }],
+        "meta": [
+            {"competition": "Child Mind Institute — Problematic Internet Use", "date": "2024/12", "rank": 1831,"total":3559, "percentile": 51.4},
+            {"competition": "CIBMTR - Equity in post-HCT Survival Predictions", "date": "2025/3", "rank": 1422, "total":3325, "percentile":42.8},
+            {"competition": "Binary Prediction with a Rainfall Dataset", "date": "2025/3", "rank": 944, "total": 4381, "percentile": 21.5},
+            {"competition": "(SIGNATE)SMBC Group GREEN×DATA Challenge 2025 for Recruiting", "date": "2025/6", "rank": 436, "total": 1894, "percentile": 23.0},
+            {"competition": "Titanic - Machine Learning from Disaster", "date": "2025/7", "rank": 1448, "total": 15669, "percentile": 9.2}
+
+        ]
     }
 }

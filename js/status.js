@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const initialChartConfig = {
         type: 'radar',
         data: {
-            labels: ['たいりょく', 'こうきしん', 'えいごりょく', 'うん', 'しりょく'],
+            labels: ['たいりょく', 'こうきしん', 'えいごりょく', 'データぶんせきりょく', 'しりょく'],
             datasets: [{
                 label: 'ステータス',
                 data: [8, 9, 7, 5, 1],
@@ -56,6 +56,8 @@ document.addEventListener('DOMContentLoaded', function() {
     createChart(initialChartConfig);
     originalChartData = initialChartConfig;
 
+
+    // 英語グラフ
     document.querySelector('[data-stat="english"]').addEventListener('click', () => {
         fetch('data/chart-data.json')
             .then(response => response.json())
@@ -87,6 +89,57 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 };
                 createChart(toeicConfig);
+                document.getElementById('reset-chart-button').style.display = 'block';
+            });
+    });
+
+    // データぶんせきりょく（data-science）クリックでKaggle順位グラフ
+    document.querySelector('[data-stat="data-science"]').addEventListener('click', () => {
+        fetch('data/chart-data.json')
+            .then(response => response.json())
+            .then(data => {
+                if (!data.kaggle_ranking) return;
+                const kaggleConfig = {
+                    type: 'line',
+                    data: {
+                        labels: data.kaggle_ranking.labels,
+                        datasets: data.kaggle_ranking.datasets
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                reverse: true, // 順位は小さいほど上位
+                                title: {
+                                    display: true,
+                                    text: '上位[%]',
+                                    color: 'white'
+                                },
+                                ticks: {
+                                    color: 'white'
+                                }
+                            },
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: '年/月',
+                                    color: 'white'
+                                },
+                                ticks: {
+                                    color: 'white'
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                labels: {
+                                    color: 'white'
+                                }
+                            }
+                        }
+                    }
+                };
+                createChart(kaggleConfig);
                 document.getElementById('reset-chart-button').style.display = 'block';
             });
     });
