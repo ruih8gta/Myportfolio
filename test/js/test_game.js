@@ -40,11 +40,11 @@ setInterval(moveDragon, 2000);
 
 // Load images
 const playerImage = new Image();
-playerImage.src = '../asset/yusha.png';
+playerImage.src = '../../assets/yusha.png';
 const dragonImage = new Image();
-dragonImage.src = '../asset/dragon.png';
+dragonImage.src = '../../assets/dragon.png';
 const backgroundImage = new Image();
-backgroundImage.src = '../asset/renga.png';
+backgroundImage.src = '../../assets/renga.png';
 
 function render() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -75,7 +75,7 @@ document.addEventListener('keydown', (event) => {
             if (playerX < 7) {
                 newX++;
             } else {
-                window.location.href = 'nextpage.html';
+                window.location.href = '../../pages/nextpage.html';
                 return;
             }
             break;
@@ -116,7 +116,7 @@ document.getElementById('right').addEventListener('click', () => {
         playerX++;
         render();
     } else {
-        window.location.href = 'nextpage.html';
+        window.location.href = '../../pages/nextpage.html';
     }
 });
 

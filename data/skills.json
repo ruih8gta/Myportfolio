@@ -1,0 +1,47 @@
+[
+    {
+        "id": "programming",
+        "name": "プログラミング",
+        "learned": true,
+        "description": "基本的なウェブ開発が可能です。",
+        "children": [
+            { "id": "python", "name": "Python", "learned": true, "description": "データ分析、機械学習、ウェブアプリケーション開発に使用します。" },
+            { "id": "html_css", "name": "HTML/CSS", "learned": true, "description": "ウェブページの構造とスタイルを定義します。" },
+            { "id": "javascript", "name": "JavaScript", "learned": true, "description": "インタラクティブなウェブページを作成します。" }
+        ]
+    },
+    {
+        "id": "kaggle",
+        "name": "Kaggle",
+        "learned": true,
+        "description": "データサイエンスのコンペティションプラットフォーム。",
+        "children": [
+            { "id": "bronze", "name": "Bronze:0", "learned": false, "title": "Bronze", "description": "ブロンズメダルを目指して奮闘中。" },
+            { "id": "silver", "name": "Silver:0", "learned": false, "title": "Silver", "description": "シルバーメダルはまだない。" },
+            { "id": "gold", "name": "Gold:0", "learned": false, "title": "Gold", "description": "ゴールドメダルはまだない。" }
+        ]
+    },
+    {
+        "id": "ipa",
+        "name": "IPA",
+        "learned": true,
+        "description": "情報処理推進機構が実施する国家試験。",
+        "children": [
+            { "id": "ap", "name": "AP:2017", "learned": true, "title": "応用情報技術者試験", "description": "2017年に合格。" },
+            { "id": "db", "name": "DB:2024", "learned": true, "title": "データベーススペシャリスト試験", "description": "2024年に合格。" },
+            { "id": "pm", "name": "PM:xxxx", "learned": false, "title": "プロジェクトマネージャ試験", "description": "今後取得予定。" }
+        ]
+    },
+    {
+        "id": "certifications",
+        "name": "民間資格",
+        "learned": true,
+        "description": "クラウドやAI関連の資格を取得。",
+        "children": [
+            { "id": "github", "name": "GitHub Foundations/Copilot:2025", "learned": true, "title": "GitHub Foundations/Copilot", "description": "2025年に取得。" },
+            { "id": "ai900", "name": "AI 900:2025", "learned": true, "title": "AI-900", "description": "2025年に取得。" },
+            { "id": "gcp_ace", "name": "GCP(ACE):xxxx", "learned": false, "title": "GCP(ACE)", "description": "今後取得予定。" },
+            { "id": "gcp_pmle", "name": "GCP(PMLE):xxxx", "learned": false, "title": "GCP(PMLE)", "description": "今後取得予定。" }
+        ]
+    }
+]

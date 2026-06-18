@@ -1,0 +1,38 @@
+{
+    "1": {
+        "items": [
+            { "text": "職業：データサイエンティスト" },
+            { "text": "専門：生成AI・システム開発" },
+            { "text": "得意な呪文：Python" },
+            { "text": "必殺技：合気道" }
+        ]
+    },
+    "2": {
+        "items": [
+            { "text": "SNS:" },
+            { "label": "LinkedIn", "url": "https://www.linkedin.com/in/shota-n-0bb024231/", "blank": true },
+            { "label": "GitHub", "url": "https://github.com/ruih8gta", "blank": true },
+            { "label": "Qiita", "url": "https://qiita.com/ruih8gta", "blank": true }
+        ]
+    },
+    "3": {
+        "items": [
+            { "text": "出版物:" },
+            { "label": "Estimation of Plasma Emission Transition Using Hidden Markov Model", "url": "https://www.jstage.jst.go.jp/article/pfr/13/0/13_3405117/_article", "blank": true },
+            { "label": "Prediction of unusual plasma discharge by using Support Vector Machine", "url": "https://www.sciencedirect.com/science/article/abs/pii/S0920379621001368", "blank": true }
+        ]
+    },
+    "4": {
+        "items": [
+            { "text": "ポートフォリオ:" },
+            { "label": "妖怪図鑑", "url": "https://ruih8gta.github.io/yokai-book/src/" }
+        ]
+    },
+    "5": {
+        "items": [
+            { "text": "スキル詳細:" },
+            { "label": "スキル詳細", "url": "pages/status.html", "blank": true }
+        ]
+    },
+    "default": "指示を待っている。"
+}

@@ -1,4 +1,4 @@
-import { skillsData, SKILL_LEVELS } from '../skills-data.js';
+import { skillsData, SKILL_LEVELS } from './skills-data.js';
 
 let currentSkillData = [...skillsData];
 
